@@ -1,0 +1,15 @@
+name: postgres-backend
+services:
+  database:
+    container_name: micro-postgres
+    image: postgres:15.2-alpine
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - 5432:5432
+    volumes:
+      - database_data:/var/lib/postgresql
+volumes:
+  database_data:
