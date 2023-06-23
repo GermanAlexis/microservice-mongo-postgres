@@ -1,16 +1,22 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  AfterInsert,
+  AfterLoad,
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 
-@Entity({ name: 'product' })
+@Entity({ name: "product" })
 export class Product {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @PrimaryGeneratedColumn("uuid")
+  productId: string;
 
-  @Column('text')
+  @Column("text")
   title: string;
 
-  @Column('text')
+  @Column("text")
   image: string;
 
-  @Column('numeric', { default: 0 })
+  @Column("numeric", { default: 0 })
   like: number;
 }
