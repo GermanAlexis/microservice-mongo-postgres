@@ -46,7 +46,7 @@ export class ProductService {
     try {
       const productUpdated = this.productRespository.save(productToUpdate);
       if (productUpdated) {
-        this.client.emit("product_update", productUpdated);
+        this.client.emit("product_updated", productUpdated);
       }
       return productUpdated;
       return;
@@ -59,7 +59,7 @@ export class ProductService {
     const productRemove = this.findOne(id);
     try {
       if (productRemove) {
-        this.client.emit("product_remove", productRemove);
+        this.client.emit("product_removed ", productRemove);
       }
       return productRemove;
     } catch (error) {
