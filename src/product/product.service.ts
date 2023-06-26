@@ -59,7 +59,7 @@ export class ProductService {
     const productRemove = this.findOne(id);
     try {
       if (productRemove) {
-        this.client.emit("product_removed ", productRemove);
+        this.client.emit("product_removed", productRemove);
       }
       return productRemove;
     } catch (error) {
